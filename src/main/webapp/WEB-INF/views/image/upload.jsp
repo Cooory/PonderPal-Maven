@@ -11,9 +11,9 @@
                <!--사진업로드 로고-->
                 <div class="upload-top">
                     <a href="home.html" class="">
-                        <img src="/images/logo.jpg" alt="">
+                        <img src="/images/logo.png" alt="">
                     </a>
-                    <p>사진 업로드</p>
+                    <p>Image Upload</p>
                 </div>
                 <!--사진업로드 로고 end-->
                 
@@ -26,8 +26,8 @@
                     
                     <!--사진설명 + 업로드버튼-->
                     <div class="upload-form-detail">
-                   		 <input type="text" placeholder="사진설명" name="caption" />
-                        <button class="cta blue">업로드</button>
+                   		 <input type="text" placeholder="Instruction" name="caption" />
+                        <button class="cta blue">Upload</button>
                     </div>
                     <!--사진설명end-->
                     

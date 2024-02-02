@@ -47,7 +47,7 @@ public class ImageController {
 
 		// 깍둑이
 		if(imageUploadDto.getFile().isEmpty()) {
-			throw new CustomValidationException("이미지가 첨부되지 않았습니다.", null);
+			throw new CustomValidationException("Please attach image.", null);
 		}
 		
 		imageService.사진업로드(imageUploadDto, principalDetails);

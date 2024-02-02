@@ -21,20 +21,20 @@
                 <article class="login__form__container">
                    <!--로그인 폼-->
                    <div class="login__form">
-                        <h1><img src="/images/logo.jpg" alt=""></h1>
+                        <h1><img src="/images/logo.png" alt=""></h1>
                         
                         <!--로그인 인풋-->
                         <form class="login__input"  action="/auth/signin" method="POST">
-                            <input type="text" name="username" placeholder="유저네임" required="required" />
-                            <input type="password" name="password" placeholder="비밀번호" required="required" />
-                            <button>로그인</button>
+                            <input type="text" name="username" placeholder="Username" required="required" />
+                            <input type="password" name="password" placeholder="Password" required="required" />
+                            <button>Sign In</button>
                         </form>
                         <!--로그인 인풋end-->
                         
                         <!-- 또는 -->
                         <div class="login__horizon">
                             <div class="br"></div>
-                            <div class="or">또는</div>
+                            <div class="or">OR</div>
                             <div class="br"></div>
                         </div>
                         <!-- 또는end -->
@@ -43,7 +43,7 @@
                         <div class="login__facebook">
                             <button onclick="javascript:location.href='/oauth2/authorization/facebook'">
                                 <i class="fab fa-facebook-square"></i>
-                                <span>Facebook으로 로그인</span>
+                                <span>Sign in with Facebook</span>
                             </button>
                         </div>
                         <!-- Oauth 소셜로그인end -->
@@ -51,8 +51,8 @@
                     
                     <!--계정이 없으신가요?-->
                     <div class="login__register">
-                        <span>계정이 없으신가요?</span>
-                        <a href="/auth/signup">가입하기</a>
+                        <span>Don't have an account?</span>
+                        <a href="/auth/signup">Sign Up</a>
                     </div>
                     <!--계정이 없으신가요?end-->
                 </article>

@@ -38,7 +38,7 @@ public class UserApiController {
 	@PutMapping("/api/user/{principalId}/profileImageUrl")
 	public ResponseEntity<?> profileImageUrlUpdate(@PathVariable int principalId, MultipartFile profileImageFile, 
 			@AuthenticationPrincipal PrincipalDetails principalDetails){
-		User userEntity = userService.회원프로필사진변경(principalId, profileImageFile);
+		User userEntity = userService.UserProfileImageEdit(principalId, profileImageFile);
 		principalDetails.setUser(userEntity); // 세션 변경
 		return new ResponseEntity<>(new CMRespDto<>(1, "프로필사진변경 성공", null), HttpStatus.OK);
 	}
@@ -59,8 +59,8 @@ public class UserApiController {
 			BindingResult bindingResult, // 꼭 @Valid 가 적혀있는 다음 파라메터 적어야됨
 			@AuthenticationPrincipal PrincipalDetails principalDetails) {
 		
-			User userEntity = userService.회원수정(id, userUpdateDto.toEntity());
-			principalDetails.setUser(userEntity); // 세션 정보 변경
+			User userEntity = userService.UserEdit(id, userUpdateDto.toEntity());
+			principalDetails.setUser(userEntity); // Change session Info
 			return new CMRespDto<>(1, "회원수정완료", userEntity); // 응답시에 userEntity의 모든 getter 함수가 호출되고 JSON으로 파싱하여 응답한다.
 		
 	}

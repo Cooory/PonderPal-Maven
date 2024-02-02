@@ -33,7 +33,7 @@ public class UserService {
 	private String uploadFolder;
 	
 	@Transactional
-	public User 회원프로필사진변경(int principalId, MultipartFile profileImageFile) {
+	public User UserProfileImageEdit(int principalId, MultipartFile profileImageFile) {
 		UUID uuid = UUID.randomUUID(); // uuid
 		String imageFileName = uuid+"_"+profileImageFile.getOriginalFilename(); // 1.jpg
 		System.out.println("이미지 파일이름 : "+imageFileName);
@@ -58,7 +58,7 @@ public class UserService {
 	
 	
 	@Transactional(readOnly = true)
-	public UserProfileDto 회원프로필(int pageUserId, int principalId) {
+	public UserProfileDto UserProfile(int pageUserId, int principalId) {
 		UserProfileDto dto = new UserProfileDto(); 
 		
 		// SELECT * FROM image WHERE userId = :userId;
@@ -87,7 +87,7 @@ public class UserService {
 	
 	
 	@Transactional
-	public User 회원수정(int id, User user) {
+	public User UserEdit(int id, User user) {
 		// 1. 영속화
 		// 1. 무조건 찾았다. 걱정마 get() 2. 못찾았어 익섹션 발동시킬께 orElseThrow()
 		User userEntity = userRepository.findById(id).orElseThrow(() -> { return new CustomValidationApiException("찾을 수 없는 id입니다.");});

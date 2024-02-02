@@ -32,7 +32,7 @@
 				
 				<c:choose>
 					<c:when test="${dto.pageOwnerState}">
-						<button class="cta" onclick="location.href='/image/upload'">사진등록</button>
+						<button class="cta" onclick="location.href='/image/upload'">Upload</button>
 					</c:when>
 					<c:otherwise>
 						<c:choose>
@@ -56,9 +56,9 @@
 
 			<div class="subscribe">
 				<ul>
-					<li><a href=""> 게시물<span>${dto.imageCount}</span>
+					<li><a href=""> Post<span>${dto.imageCount}</span>
 					</a></li>
-					<li><a href="javascript:subscribeInfoModalOpen(${dto.user.id});"> 구독정보<span>${dto.subscribeCount}</span>
+					<li><a href="javascript:subscribeInfoModalOpen(${dto.user.id});">Subscribe<span>${dto.subscribeCount}</span>
 					</a></li>
 				</ul>
 			</div>
@@ -104,9 +104,9 @@
 <!--로그아웃, 회원정보변경 모달-->
 <div class="modal-info" onclick="modalInfo()">
 	<div class="modal">
-		<button onclick="location.href='/user/${dto.user.id}/update'">회원정보 변경</button>
-		<button onclick="location.href='/logout'">로그아웃</button>
-		<button onclick="closePopup('.modal-info')">취소</button>
+		<button onclick="location.href='/user/${dto.user.id}/update'">Edit Profile</button>
+		<button onclick="location.href='/logout'">Sign Out</button>
+		<button onclick="closePopup('.modal-info')">Cancel</button>
 	</div>
 </div>
 <!--로그아웃, 회원정보변경 모달 end-->
@@ -114,9 +114,9 @@
 <!--프로필사진 바꾸기 모달-->
 <div class="modal-image" onclick="modalImage()">
 	<div class="modal">
-		<p>프로필 사진 바꾸기</p>
-		<button onclick="profileImageUpload(${dto.user.id}, ${principal.user.id})">사진 업로드</button>
-		<button onclick="closePopup('.modal-image')">취소</button>
+		<p>Change Profile Image</p>
+		<button onclick="profileImageUpload(${dto.user.id}, ${principal.user.id})">Image Upload</button>
+		<button onclick="closePopup('.modal-image')">Cancel</button>
 	</div>
 </div>
 
@@ -125,7 +125,7 @@
 <div class="modal-subscribe">
 	<div class="subscribe">
 		<div class="subscribe-header">
-			<span>구독정보</span>
+			<span>Follow Info</span>
 			<button onclick="modalClose()">
 				<i class="fas fa-times"></i>
 			</button>

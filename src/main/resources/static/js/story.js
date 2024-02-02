@@ -90,8 +90,8 @@ function getStoryItem(image) {
 		</div>
 
 		<div class="sl__item__input">
-			<input type="text" placeholder="댓글 달기..." id="storyCommentInput-${image.id}" />
-			<button type="button" onClick="addComment(${image.id})">게시</button>
+			<input type="text" placeholder="Leave a comment..." id="storyCommentInput-${image.id}" />
+			<button type="button" onClick="addComment(${image.id})">Comment</button>
 		</div>
 
 	</div>
@@ -178,7 +178,7 @@ function addComment(imageId) {
 	//console.log(JSON.stringify(data));
 
 	if (data.content === "") {
-		alert("댓글을 작성해주세요!");
+		alert("Please write comment");
 		return;
 	}
 	
